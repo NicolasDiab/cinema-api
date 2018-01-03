@@ -1,0 +1,23 @@
+version: '3.4'
+services:
+  app:
+    build: .
+    ports:
+     - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "secret"
+      MYSQL_USER: "cinema"
+      MYSQL_PASSWORD: "secret"
+      MYSQL_DATABASE: "cinema"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8081:8080"
