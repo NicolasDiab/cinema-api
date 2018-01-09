@@ -35,13 +35,9 @@ public class Movie {
     @JsonIgnoreProperties("movies")
     private Category category;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name="movie_person",
-            joinColumns=@JoinColumn(name="movie_id"),
-            inverseJoinColumns=@JoinColumn(name="person_id"))
-    @JsonIgnoreProperties("movies")
-    private Set<Person> actors;
+    @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("movie")
+    private Set<Actor> actors;
 
     public Integer getId() {
         return id;
@@ -99,13 +95,6 @@ public class Movie {
         this.director = director;
     }
 
-    public Set<Person> getActors() {
-        return actors;
-    }
-
-    public void setActors(Set<Person> actors) {
-        this.actors = actors;
-    }
 
     public Category getCategory() {
         return category;
@@ -113,5 +102,13 @@ public class Movie {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Set<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(Set<Actor> actors) {
+        this.actors = actors;
     }
 }

@@ -1,6 +1,5 @@
 package fr.polytech.agnt.cinema.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -17,14 +16,13 @@ public class Person {
     private String firstname;
     @NotNull
     private String lastname;
-    @NotNull
     private Date deathDate;
     @NotNull
     private Date birthDate;
 
-    @ManyToMany(mappedBy="actors")
+    @OneToMany(mappedBy="person")
     @JsonIgnoreProperties("actors")
-    private Set<Movie> movies;
+    private Set<Actor> movies;
 
     public Integer getId() {
         return id;
@@ -66,11 +64,11 @@ public class Person {
         this.birthDate = birthDate;
     }
 
-    public Set<Movie> getMovies() {
+    public Set<Actor> getMovies() {
         return movies;
     }
 
-    public void setMovies(Set<Movie> movies) {
+    public void setMovies(Set<Actor> movies) {
         this.movies = movies;
     }
 }

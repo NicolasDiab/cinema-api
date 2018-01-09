@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
+@CrossOrigin
 @RequestMapping(path = "/categories")
 public class CategoryController {
     @Autowired

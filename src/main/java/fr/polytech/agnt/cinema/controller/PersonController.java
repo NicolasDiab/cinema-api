@@ -1,5 +1,6 @@
 package fr.polytech.agnt.cinema.controller;
 
+import fr.polytech.agnt.cinema.entity.Actor;
 import fr.polytech.agnt.cinema.entity.Movie;
 import fr.polytech.agnt.cinema.entity.Person;
 import fr.polytech.agnt.cinema.repository.PersonRepository;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 @RestController
+@CrossOrigin
 @RequestMapping(path = "/people")
 public class PersonController {
 
@@ -38,7 +40,7 @@ public class PersonController {
 
     @GetMapping("/{id}/movies")
     @ResponseBody
-    public Set<Movie> add(
+    public Set<Actor> add(
             @PathVariable("id") Integer id,
             HttpServletResponse response
     ) {
