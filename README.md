@@ -2,6 +2,9 @@
 
 Pour lancer le projet, executer le script run.cmd dans powershell ou cmd
 
+## Run
+Pour lancer l'application, utilisez le script run.cmd
+
 ## Dependance
 
 1. Docker
