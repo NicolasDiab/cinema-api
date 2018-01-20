@@ -65,10 +65,10 @@ public class MovieController {
         response.setStatus(404);
         return null;
     }
-
+git
     @DeleteMapping("/{id}")
     @ResponseBody
-    public void update(
+    public void delete(
             @PathVariable("id") Integer id,
             HttpServletResponse response
     ) {

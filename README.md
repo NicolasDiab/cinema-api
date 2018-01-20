@@ -19,7 +19,7 @@ Il est possible avec le plugin bash d'intellij, de lancer avec celui-ci le scrip
 
 Voici un lien de partage d'une collection de requête postman : 
 
-https://www.getpostman.com/collections/8bfd743f75a67f7a58c6
+https://www.getpostman.com/collections/8bfd743f75a67f7a58c6 (last update 20/1/2018)
 
 
 

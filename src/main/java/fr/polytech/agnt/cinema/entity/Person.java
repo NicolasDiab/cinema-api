@@ -20,7 +20,7 @@ public class Person {
     @NotNull
     private Date birthDate;
 
-    @OneToMany(mappedBy="person")
+    @OneToMany(mappedBy="person",cascade=CascadeType.REMOVE)
     @JsonIgnoreProperties("actors")
     private Set<Actor> movies;
 

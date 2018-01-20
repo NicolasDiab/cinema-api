@@ -35,7 +35,7 @@ public class Movie {
     @JsonIgnoreProperties("movies")
     private Category category;
 
-    @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER, cascade=CascadeType.REMOVE)
     @JsonIgnoreProperties("movie")
     private Set<Actor> actors;
 
