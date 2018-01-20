@@ -65,7 +65,7 @@ public class MovieController {
         response.setStatus(404);
         return null;
     }
-git
+
     @DeleteMapping("/{id}")
     @ResponseBody
     public void delete(
