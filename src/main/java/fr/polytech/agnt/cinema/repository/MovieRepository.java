@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface MovieRepository extends CrudRepository<Movie, Integer> {
-//    @Query("SELECT m FROM Movies m  join Person p on p.id = m.id where p.id = :directorId")
-//    public List<Movie> findByDirector(@Param("directorId") Integer directorId);
+    @Query("SELECT m FROM Movie m inner join m.category c where title like %:text% or c.name like %:text%")
+    public List<Movie> search(@Param("text") String text);
 }
